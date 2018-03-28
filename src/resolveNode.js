@@ -30,7 +30,7 @@ function mergedLifeCyclesWithApollo(attributes, actions) {
     typeof attributes.ondestroy == "function"
       ? (...args) => {
           removeApolloListeners();
-          attributes.oncreate(...args);
+          attributes.ondestroy(...args);
         }
       : () => removeApolloListeners;
 
