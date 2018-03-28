@@ -1,0 +1,29 @@
+{
+	"name": "hyperapp-apollo",
+	"version": "1.0.0",
+	"description": "Apollo integration layer for Hyperapp",
+	"unpkg": "dist/hyperapp-apollo.min.js",
+	"main": "dist/hyperapp-apollo.umd.js",
+	"module": "dist/hyperapp-apollo.esm.js",
+	"author": "Eric Schaefer <omg@eric-schaefer.com>",
+	"license": "MIT",
+	"scripts": {
+		"build": "npm run build:browser && npm run build:es && npm run build:umd",
+		"build:browser": "rollup --config build/rollup.config.browser.js",
+		"build:es": "rollup --config build/rollup.config.es.js",
+		"build:umd": "rollup --config build/rollup.config.umd.js",
+		"prepublishOnly": "npm run test && npm run build"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-plugin-external-helpers": "^6.22.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"rollup": "^0.57.1",
+		"rollup-plugin-babel": "^3.0.3",
+		"rollup-plugin-commonjs": "^9.1.0",
+		"rollup-plugin-node-resolve": "^3.3.0",
+		"rollup-plugin-replace": "^2.0.0",
+		"rollup-plugin-uglify": "^3.0.0"
+	}
+}
